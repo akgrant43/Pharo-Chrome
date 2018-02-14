@@ -61,8 +61,21 @@ To keep the original Monticello idea of having #stable and #development versions
 
 ### Pharo 7 Installation
 
-Pharo-Chrome relies on ZnWebSocket, which doesn't appear to be loaded in Pharo 7.  If you are missing ZnWebSocket, please send a message to the pharo-users mailing list for help.
+Pharo-Chrome relies on ZnWebSocket, which doesn't appear to be loaded in Pharo 7.  
+If you are missing ZnWebSocket, please run:
 
+```
+Gofer new
+   smalltalkhubUser: 'SvenVanCaekenberghe' project: 'ZincHTTPComponents';
+   package: 'ConfigurationOfZincHTTPComponents';
+   load.
+(Smalltalk globals at: #ConfigurationOfZincHTTPComponents) project latestVersion load: 'WebSocket'.
+```
+
+For more details, visit the [Pharo WebSockets implementation][websockets] or send a message to the pharo-users 
+mailing list for help.
+
+[websockets]: https://ci.inria.fr/pharo-contribution/job/EnterprisePharoBook/lastSuccessfulBuild/artifact/book-result/WebSockets/WebSockets.html
 
 ## A Short Demo
 
