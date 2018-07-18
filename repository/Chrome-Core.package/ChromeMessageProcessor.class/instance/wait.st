@@ -1,5 +1,5 @@
 messages
 wait
-	"Wait for the receivers message to be processed"
+	"Wait for the receivers message to be processed (with timeout)"
 
-	semaphore wait
+	semaphore waitTimeoutSeconds: 180 onCompletion: nil onTimeout: [ Error signal: 'Google Chrome Message Processor timeout' ].
